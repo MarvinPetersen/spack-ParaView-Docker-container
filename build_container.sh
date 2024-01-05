@@ -1,8 +1,9 @@
 #!/bin/bash
 
-set -e
+set -ex
 
-# create the buildcache 
+# create the buildcache
+mkdir -p mirror
 docker buildx build -t spack/paraview -f Dockerfile --target cache -o ./mirror .
 
 # create the container containing paraview
